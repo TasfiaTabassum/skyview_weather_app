@@ -9,12 +9,72 @@ class TodaysWeather extends StatelessWidget {
   final WeatherModel? weatherModel;
   const TodaysWeather({Key? key,this.weatherModel}) : super(key: key);
 
+  WeatherType getWeatherType(Current? current){
+
+    if(current?.isDay == 1){
+      //day
+      if(current?.condition?.text == "Sunny"){
+        return WeatherType.sunny;
+      }
+      else if(current?.condition?.text == "OverCast"){
+        return WeatherType.overcast;
+      }
+      else if(current?.condition?.text == "Partly Cloudy"){
+        return WeatherType.cloudy;
+      }
+      else if(current?.condition?.text == "Cloudy"){
+        return WeatherType.cloudy;
+      }
+      else if(current?.condition?.text == "Mist"){
+        return WeatherType.lightRainy ;
+      }
+      else if(current!.condition!.text!.contains("Thunder")){
+        return WeatherType.thunder;
+      }
+      else if(current?.condition?.text == "Rain"){
+        return WeatherType.heavyRainy;
+      }
+      else if(current?.condition?.text == "Clear"){
+        return WeatherType.sunny;
+      }
+    }
+    else{
+      //night
+      if(current?.condition?.text == "Sunny"){
+        return WeatherType.sunnyNight;
+      }
+      else if(current?.condition?.text == "OverCast"){
+        return WeatherType.overcast;
+      }
+      else if(current?.condition?.text == "Partly Cloudy"){
+        return WeatherType.cloudyNight;
+      }
+      else if(current?.condition?.text == "Cloudy"){
+        return WeatherType.cloudyNight;
+      }
+      else if(current?.condition?.text == "Mist"){
+        return WeatherType.lightRainy ;
+      }
+      else if(current?.condition?.text == "Thunder"){
+        return WeatherType.thunder;
+      }
+      else if(current?.condition?.text == "Rain"){
+        return WeatherType.heavyRainy;
+      }
+      else if(current?.condition?.text == "Clear"){
+        return WeatherType.sunnyNight;
+      }
+    }
+
+    return WeatherType.sunny;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        WeatherBg(weatherType: WeatherType.heavyRainy,
-            width: double.infinity,
+        WeatherBg(weatherType: getWeatherType(weatherModel?.current),
+            width: MediaQuery.of(context).size.width,
             height: 400
         ),
         SizedBox(
@@ -24,6 +84,7 @@ class TodaysWeather extends StatelessWidget {
             children: [
              Container(
                padding: const EdgeInsets.all(8),
+               alignment: Alignment.centerLeft,
                decoration: BoxDecoration(
                  color: Colors.white10,
                  borderRadius: BorderRadius.circular(10),
