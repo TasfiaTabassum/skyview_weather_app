@@ -96,7 +96,15 @@ class TodaysWeather extends StatelessWidget {
                      style: const TextStyle(
                          fontSize: 25,
                          fontWeight: FontWeight.bold,
-                         color: Colors.white
+                         color: Colors.white,
+                         shadows: [
+                           Shadow(
+                             color: Colors.black,
+                             blurRadius: 2.0,
+                             offset: Offset(2.0, 2.0),
+                           )
+                         ]
+
                      ),
                    ),
                    Text(
@@ -108,7 +116,14 @@ class TodaysWeather extends StatelessWidget {
                      style: const TextStyle(
                          fontSize: 13,
                          fontWeight: FontWeight.bold,
-                         color: Colors.white
+                         color: Colors.white,
+                         shadows: [
+                           Shadow(
+                             color: Colors.black,
+                             blurRadius: 2.0,
+                             offset: Offset(2.0, 2.0),
+                           )
+                         ]
                      ),
                    )
                  ],
@@ -145,7 +160,14 @@ class TodaysWeather extends StatelessWidget {
                               style: const TextStyle(
                                 fontSize: 80,
                                 fontWeight: FontWeight.bold,
-                                color:  Colors.white
+                                color:  Colors.white,
+                                  shadows: [
+                                    Shadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                      offset: Offset(2.0, 2.0),
+                                    )
+                                  ]
                               ),
                             ),
                           ),
@@ -155,7 +177,14 @@ class TodaysWeather extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 25,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white
+                              color: Colors.white,
+                                shadows: [
+                                  Shadow(
+                                    color: Colors.black,
+                                    blurRadius: 2.0,
+                                    offset: Offset(2.0, 2.0),
+                                  )
+                                ]
                             ),
                           )
                         ],
@@ -166,7 +195,14 @@ class TodaysWeather extends StatelessWidget {
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 15,
-                          color: Colors.white
+                          color: Colors.white,
+                            shadows: [
+                              Shadow(
+                                color: Colors.black,
+                                blurRadius: 2.0,
+                                offset: Offset(2.0, 2.0),
+                              )
+                            ]
                         ),
 
                       )
