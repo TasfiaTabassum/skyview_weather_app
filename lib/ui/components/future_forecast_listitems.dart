@@ -10,21 +10,42 @@ class FutureForecastListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white24,
+        color: Colors.white10,
         borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFFFFFFFF).withAlpha(60),
+            blurRadius: 3.0,
+            spreadRadius: 0.0,
+            offset: const Offset(2.0, 4.0,),
+          ),
+        ],
       ),
       padding: EdgeInsets.symmetric(vertical: 8),
       margin: EdgeInsets.all(8),
       width: double.infinity,
       child: Row(
         children: [
-          Image.network("https:${forecastday?.day?.condition?.icon ?? ""}"),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 30,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle ,
+                color: Colors.white30,
+              ),
+              child: Image.network("https:${forecastday?.day?.condition?.icon ?? ""}",
+
+              ),
+            ),
+          ),
           Expanded(
             child: Text(
               DateFormat.MMMEd().format(DateTime.parse(forecastday?.date.toString() ?? "")),
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.white
+                color: Colors.white,
+                fontSize: 12,
               ),
             ),
           ),
@@ -34,7 +55,8 @@ class FutureForecastListItem extends StatelessWidget {
               forecastday?.day?.condition?.text.toString() ?? "",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.white
+                  color: Colors.white,
+                fontSize: 12,
               ),
             ),
           ),
@@ -44,7 +66,8 @@ class FutureForecastListItem extends StatelessWidget {
               "^${forecastday?.day?.maxtempC?.round()}/${forecastday?.day?.mintempC?.round()}",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.white
+                  color: Colors.white,
+                fontSize: 12,
               ),
             ),
           ),

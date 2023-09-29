@@ -92,79 +92,83 @@ class _HomePageState extends State<HomePage> {
           }, icon: Icon(Icons.my_location, color: Colors.white,)),
         ],
       ),
-      body: SafeArea(
-        child: FutureBuilder(
-          builder: (context,snapshot){
-            if(snapshot.hasData){
-              WeatherModel? weatherModel = snapshot.data;
-              return SizedBox(
-                child: Column(
-                  children: [
-                    TodaysWeather(
-                        weatherModel: weatherModel
-                    ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SafeArea(
+          child: FutureBuilder(
+            builder: (context,snapshot){
+              if(snapshot.hasData){
+                WeatherModel? weatherModel = snapshot.data;
+                return SizedBox(
 
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      "Weather By Hours",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold
+                  child: Column(
+                    children: [
+                      TodaysWeather(
+                          weatherModel: weatherModel
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    SizedBox(
-                      height: 150,
-                      child: ListView.builder(
-                        itemBuilder: (context,index){
-                          Hour? hour = weatherModel?.forecast?.forecastday?[0].hour?[index];
-                          return HourlyWeatherListItem(hour: hour,);
+
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      const Text(
+                        "Weather By Hours",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      SizedBox(
+                        height: 115,
+                        child: ListView.builder(
+                          itemBuilder: (context,index){
+                            Hour? hour = weatherModel?.forecast?.forecastday?[0].hour?[index];
+                            return HourlyWeatherListItem(hour: hour,);
+                          },
+                          itemCount: weatherModel?.forecast?.forecastday?[0].hour?.length ,
+                          scrollDirection: Axis.horizontal,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      const Text(
+                        "Next 7 days Forecast",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+
+                      Expanded(
+                        child: ListView.builder(itemBuilder: (context,index){
+                          Forecastday? forecastday = weatherModel?.forecast?.forecastday?[index];
+                          return FutureForecastListItem(forecastday: forecastday,);
                         },
-                        itemCount: weatherModel?.forecast?.forecastday?[0].hour?.length ,
-                        scrollDirection: Axis.horizontal,
+                          itemCount: weatherModel?.forecast?.forecastday?.length ,
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      "Next 7 days Forecast",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-
-                    Expanded(
-                      child: ListView.builder(itemBuilder: (context,index){
-                        Forecastday? forecastday = weatherModel?.forecast?.forecastday?[index];
-                        return FutureForecastListItem(forecastday: forecastday,);
-                      },
-                        itemCount: weatherModel?.forecast?.forecastday?.length ,
-                      ),
-                    ),
-                  ],
-                ),
-              );
-            }
-            if(snapshot.hasError){
+                    ],
+                  ),
+                );
+              }
+              if(snapshot.hasError){
+                return const Center(
+                  child: Text("Error!!!"),
+                );
+              }
               return const Center(
-                child: Text("Error!!!"),
+                child: CircularProgressIndicator(),
               );
-            }
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }, future: apiService.getWeatherData(searchText),
+            }, future: apiService.getWeatherData(searchText),
+          ),
         ),
       ),
     );

@@ -88,6 +88,14 @@ class TodaysWeather extends StatelessWidget {
                decoration: BoxDecoration(
                  color: Colors.white10,
                  borderRadius: BorderRadius.circular(10),
+                 boxShadow: [
+                   BoxShadow(
+                     color: const Color(0xFF000000).withAlpha(20),
+                     blurRadius: 3.0,
+                     spreadRadius: 0.0,
+                     offset: const Offset(2.0, 4.0,),
+                   ),
+                 ],
                ),
                child: Column(
                  children: [
@@ -103,7 +111,8 @@ class TodaysWeather extends StatelessWidget {
                              blurRadius: 2.0,
                              offset: Offset(2.0, 2.0),
                            )
-                         ]
+                         ],
+
 
                      ),
                    ),
@@ -138,10 +147,28 @@ class TodaysWeather extends StatelessWidget {
                   Container(
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.white10
+                      color: Colors.white10,
+
+
                     ),
-                    child: Image.network(
-                        "https:${weatherModel?.current?.condition?.icon ?? ""}"
+
+
+                    child: Container(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white10,
+                        boxShadow: [
+                          BoxShadow(
+                            color: const Color(0xFF000000).withAlpha(20),
+                            blurRadius: 3.0,
+                            spreadRadius: 0.0,
+                            offset: const Offset(2.0, 4.0,),
+                          ),
+                        ],
+                      ),
+                      child: Image.network(
+                          "https:${weatherModel?.current?.condition?.icon ?? ""}"
+                      ),
                     ),
                   ),
 
@@ -224,6 +251,14 @@ class TodaysWeather extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white10,
                   borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF000000).withAlpha(20),
+                      blurRadius: 3.0,
+                      spreadRadius: 0.0,
+                      offset: const Offset(2.0, 4.0,),
+                    ),
+                  ],
                 ),
               child: Column(
                 children: [

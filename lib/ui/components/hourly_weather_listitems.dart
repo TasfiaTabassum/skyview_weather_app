@@ -11,11 +11,19 @@ class HourlyWeatherListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(8),
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(6),
       width: 110,
       decoration: BoxDecoration(
-        color: Colors.white24,
+        color: Colors.white10,
         borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFFFFFFFF).withAlpha(60),
+            blurRadius: 3.0,
+            spreadRadius: 0.0,
+            offset: const Offset(2.0, 4.0,),
+          ),
+        ],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -25,13 +33,13 @@ class HourlyWeatherListItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 8.0),
+                padding: const EdgeInsets.only(top: 2.0),
                 child: Text(
                   hour?.tempC?.round()?.toString() ?? "",
                   style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 16,
+                    fontSize: 14,
                   ),
                 ),
               ),
@@ -46,10 +54,11 @@ class HourlyWeatherListItem extends StatelessWidget {
           ),
 
           Container(
-            height: 50,
+            height: 40,
             decoration: BoxDecoration(
               shape: BoxShape.circle ,
               color: Colors.white30,
+
             ),
             child:
             Image.network("https:${hour?.condition?.icon.toString()}"),
@@ -62,6 +71,7 @@ class HourlyWeatherListItem extends StatelessWidget {
             ),
             style: TextStyle(
               color: Colors.white,
+              fontSize: 12,
             ),
           ),
         ],
