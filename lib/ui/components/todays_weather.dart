@@ -108,8 +108,8 @@ class TodaysWeather extends StatelessWidget {
                          shadows: [
                            Shadow(
                              color: Colors.black,
-                             blurRadius: 2.0,
-                             offset: Offset(2.0, 2.0),
+                             blurRadius: 1.0,
+                             offset: Offset(1.0, 1.0),
                            )
                          ],
 
@@ -129,8 +129,8 @@ class TodaysWeather extends StatelessWidget {
                          shadows: [
                            Shadow(
                              color: Colors.black,
-                             blurRadius: 2.0,
-                             offset: Offset(2.0, 2.0),
+                             blurRadius: 1.0,
+                             offset: Offset(1.0, 1.0),
                            )
                          ]
                      ),
@@ -208,8 +208,8 @@ class TodaysWeather extends StatelessWidget {
                                 shadows: [
                                   Shadow(
                                     color: Colors.black,
-                                    blurRadius: 2.0,
-                                    offset: Offset(2.0, 2.0),
+                                    blurRadius: 1.0,
+                                    offset: Offset(1.0, 1.0),
                                   )
                                 ]
                             ),
@@ -226,8 +226,8 @@ class TodaysWeather extends StatelessWidget {
                             shadows: [
                               Shadow(
                                 color: Colors.black,
-                                blurRadius: 2.0,
-                                offset: Offset(2.0, 2.0),
+                                blurRadius: 1.0,
+                                offset: Offset(1.0, 1.0),
                               )
                             ]
                         ),
