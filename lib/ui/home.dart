@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
           ElevatedButton(
               onPressed: (){
             Navigator.pop(context);
+
           },
               child: Text("Cancel")),
           ElevatedButton(
@@ -52,8 +53,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF01263F),
-      //backgroundColor: Colors.black,
+      //backgroundColor: const Color,
+      backgroundColor: Colors.black,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -99,7 +100,7 @@ class _HomePageState extends State<HomePage> {
             builder: (context,snapshot){
               if(snapshot.hasData){
                 WeatherModel? weatherModel = snapshot.data;
-                return SizedBox(
+                return SingleChildScrollView(
 
                   child: Column(
                     children: [
@@ -136,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                         height: 8,
                       ),
                       const Text(
-                        "Next 7 days Forecast",
+                        "Next 3 days Forecast",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
@@ -147,14 +148,16 @@ class _HomePageState extends State<HomePage> {
                         height: 8,
                       ),
 
-                      Expanded(
-                        child: ListView.builder(itemBuilder: (context,index){
+                      ListView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context,index){
                           Forecastday? forecastday = weatherModel?.forecast?.forecastday?[index];
                           return FutureForecastListItem(forecastday: forecastday,);
                         },
                           itemCount: weatherModel?.forecast?.forecastday?.length ,
                         ),
-                      ),
+
                     ],
                   ),
                 );

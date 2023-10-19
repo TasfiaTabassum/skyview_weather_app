@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_weather_bg_null_safety/bg/weather_bg.dart';
 import 'package:flutter_weather_bg_null_safety/flutter_weather_bg.dart';
@@ -19,7 +19,10 @@ class TodaysWeather extends StatelessWidget {
       else if(current?.condition?.text == "OverCast"){
         return WeatherType.overcast;
       }
-      else if(current?.condition?.text == "Partly Cloudy"){
+      else if(current?.condition?.text == "Snowy"){
+        return WeatherType.heavySnow;
+      }
+      else if(current?.condition?.text == "Partly cloudy"){
         return WeatherType.cloudy;
       }
       else if(current?.condition?.text == "Cloudy"){
