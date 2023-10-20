@@ -10,11 +10,11 @@ class FutureForecastListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white10,
+        color: Colors.black87,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFFFFFFFF).withAlpha(60),
+            color: const Color(0xFFFFFFFF).withAlpha(80),
             blurRadius: 3.0,
             spreadRadius: 0.0,
             offset: const Offset(2.0, 4.0,),

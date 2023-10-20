@@ -4,6 +4,8 @@ import 'package:skyview_weather_app/model/weather_model.dart';
 import 'package:skyview_weather_app/service/api_service.dart';
 import 'package:flutter/src/widgets/async.dart';
 import 'package:skyview_weather_app/ui/components/future_forecast_listitems.dart';
+import 'package:skyview_weather_app/ui/components/todays_astro.dart';
+import 'package:skyview_weather_app/ui/components/todays_details.dart';
 import 'package:skyview_weather_app/ui/components/todays_weather.dart';
 import 'components/hourly_weather_listitems.dart';
 
@@ -100,6 +102,8 @@ class _HomePageState extends State<HomePage> {
             builder: (context,snapshot){
               if(snapshot.hasData){
                 WeatherModel? weatherModel = snapshot.data;
+
+
                 return SingleChildScrollView(
 
                   child: Column(
@@ -133,9 +137,53 @@ class _HomePageState extends State<HomePage> {
                           scrollDirection: Axis.horizontal,
                         ),
                       ),
+
                       const SizedBox(
                         height: 8,
                       ),
+                      const Text(
+                        "Weather Details",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+
+                      TodaysDetails(
+                        weatherModel: weatherModel,
+                      ),
+
+                      const SizedBox(
+                        height: 8,
+                      ),
+
+                      // const Text(
+                      //   "Weather Details",
+                      //   style: TextStyle(
+                      //       color: Colors.white,
+                      //       fontSize: 16,
+                      //       fontWeight: FontWeight.bold
+                      //   ),
+                      // ),
+                      // const SizedBox(
+                      //   height: 8,
+                      // ),
+                     //
+                     // AstroDetails(
+                     //  astro: a,
+                     // ),
+                     //
+                     //  const SizedBox(
+                     //    height: 8,
+                     //  ),
+
+
+
+
                       const Text(
                         "Next 3 days Forecast",
                         style: TextStyle(
@@ -149,14 +197,14 @@ class _HomePageState extends State<HomePage> {
                       ),
 
                       ListView.builder(
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          itemBuilder: (context,index){
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemBuilder: (context,index){
                           Forecastday? forecastday = weatherModel?.forecast?.forecastday?[index];
                           return FutureForecastListItem(forecastday: forecastday,);
                         },
-                          itemCount: weatherModel?.forecast?.forecastday?.length ,
-                        ),
+                        itemCount: weatherModel?.forecast?.forecastday?.length ,
+                      ),
 
                     ],
                   ),
