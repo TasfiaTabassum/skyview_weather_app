@@ -125,43 +125,86 @@ class TodaysWeather extends StatelessWidget {
                    ),
                  ],
                ),
-               child: Column(
+               child: Row(
                  children: [
-                   Text(
-                     weatherModel?.location?.name ?? "",
-                     style: const TextStyle(
-                         fontSize: 25,
-                         fontWeight: FontWeight.bold,
-                         color: Colors.white,
-                         shadows: [
-                           Shadow(
-                             color: Colors.black,
-                             blurRadius: 1.0,
-                             offset: Offset(1.0, 1.0),
-                           )
+                   Row(
+                     children: [
+                       Column(
+                         children: [
+                           Text(
+                             weatherModel?.location?.name ?? "",
+                             style: const TextStyle(
+                                 fontSize: 25,
+                                 fontWeight: FontWeight.bold,
+                                 color: Colors.white,
+                                 shadows: [
+                                   Shadow(
+                                     color: Colors.black,
+                                     blurRadius: 1.0,
+                                     offset: Offset(1.0, 1.0),
+                                   )
+                                 ],
+
+
+                             ),
+                           ),
+                           Text(
+                             DateFormat.yMMMMEEEEd().format(
+                                 DateTime.parse(
+                                     weatherModel?.current?.lastUpdated.toString() ?? ""
+                                 )
+                             ),
+                             style: const TextStyle(
+                                 fontSize: 13,
+                                 fontWeight: FontWeight.bold,
+                                 color: Colors.white,
+                                 shadows: [
+                                   Shadow(
+                                     color: Colors.black,
+                                     blurRadius: 1.0,
+                                     offset: Offset(1.0, 1.0),
+                                   )
+                                 ]
+                             ),
+                           ),
+
                          ],
-
-
-                     ),
+                       ),
+                     ],
                    ),
-                   Text(
-                     DateFormat.yMMMMEEEEd().format(
-                         DateTime.parse(
-                             weatherModel?.current?.lastUpdated.toString() ?? ""
-                         )
-                     ),
-                     style: const TextStyle(
-                         fontSize: 13,
-                         fontWeight: FontWeight.bold,
-                         color: Colors.white,
-                         shadows: [
-                           Shadow(
-                             color: Colors.black,
-                             blurRadius: 1.0,
-                             offset: Offset(1.0, 1.0),
-                           )
-                         ]
-                     ),
+                   Row(
+                     children: [
+                       Column(
+                         children: [
+                           Padding(
+                             padding: const EdgeInsets.only(left: 80),
+                             child: Text(
+                               DateFormat.jm().format(
+                                   DateTime.fromMillisecondsSinceEpoch(
+                                       weatherModel?.current?.lastUpdatedEpoch ?? 0
+                                   )
+                               ),
+
+                               style: const TextStyle(
+
+                                 fontSize: 18,
+                                 fontWeight: FontWeight.bold,
+                                 color: Colors.white,
+                                 shadows: [
+                                   Shadow(
+                                     color: Colors.black,
+                                     blurRadius: 1.0,
+                                     offset: Offset(1.0, 1.0),
+                                   )
+                                 ],
+
+
+                               ),
+                             ),
+                           ),
+                         ],
+                       )
+                     ],
                    )
                  ],
                ),
