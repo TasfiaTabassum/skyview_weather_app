@@ -2,9 +2,8 @@ class WeatherModel {
   Location? location;
   Current? current;
   Forecast? forecast;
-  Astro? astro;
 
-  WeatherModel({this.location, this.current, this.forecast, this.astro});
+  WeatherModel({this.location, this.current, this.forecast});
 
   WeatherModel.fromJson(Map<String, dynamic> json) {
     location = json['location'] != null
@@ -15,8 +14,6 @@ class WeatherModel {
     forecast = json['forecast'] != null
         ? new Forecast.fromJson(json['forecast'])
         : null;
-
-    astro = json['astro'] != null ? new Astro.fromJson(json['astro']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -29,10 +26,6 @@ class WeatherModel {
     }
     if (this.forecast != null) {
       data['forecast'] = this.forecast!.toJson();
-    }
-
-    if (this.astro != null) {
-      data['astro'] = this.astro!.toJson();
     }
     return data;
   }
@@ -379,7 +372,7 @@ class Astro {
   String? moonrise;
   String? moonset;
   String? moonPhase;
-  String? moonIllumination;
+  int? moonIllumination;
   int? isMoonUp;
   int? isSunUp;
 

@@ -5,7 +5,8 @@ import '../model/weather_model.dart';
 
 class ApiService {
   Future<WeatherModel> getWeatherData(String searchText) async {
-    String url = "$base_url&q=$searchText&days=7";
+    String url = "$base_url&q=$searchText&days=3&aqi=no&alerts=no";
+
     try {
       Response response = await get(Uri.parse(url));
       if (response.statusCode == 200) {
