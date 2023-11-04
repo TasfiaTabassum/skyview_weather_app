@@ -5,10 +5,11 @@ import 'package:skyview_weather_app/model/weather_model.dart';
 import 'package:skyview_weather_app/service/api_service.dart';
 import 'package:flutter/src/widgets/async.dart';
 import 'package:skyview_weather_app/ui/components/future_forecast_listitems.dart';
-
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:skyview_weather_app/ui/components/todays_details.dart';
 import 'package:skyview_weather_app/ui/components/todays_weather.dart';
 import 'components/hourly_weather_listitems.dart';
+import '../Screens/city.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -100,6 +101,41 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: GNav(
+        backgroundColor:Colors.black,
+        color: Colors.white,
+        activeColor: Colors.white,
+        tabBackgroundColor: Colors.white24,
+        padding: EdgeInsets.all(16),
+        gap: 4,
+        tabs: [
+          GButton(
+            icon: Icons.home,
+            text: 'Home',
+          ),
+          GButton(
+            icon: Icons.location_city,
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => city()),
+              );
+            },
+            text: 'City',
+          ),
+          GButton(
+            icon: Icons.calendar_today,
+            text: 'Calendar',
+          ),
+          GButton(
+            icon: Icons.chat,
+            text: 'Chat',
+          ),
+          GButton(
+            icon: Icons.settings,
+            text: 'settings',)
+        ],
+      ),
       //backgroundColor: const Color,
       backgroundColor: Colors.black,
       extendBodyBehindAppBar: true,
