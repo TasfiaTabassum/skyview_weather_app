@@ -1,19 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:provider/provider.dart';
 import 'package:skyview_weather_app/model/weather_model.dart';
+import 'package:skyview_weather_app/provider/favourite_provider.dart';
 import 'package:skyview_weather_app/service/api_service.dart';
 import 'package:flutter/src/widgets/async.dart';
 import 'package:skyview_weather_app/ui/components/future_forecast_listitems.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+//import 'package:skyview_weather_app/ui/components/todays_astro.dart';
 import 'package:skyview_weather_app/ui/components/todays_details.dart';
 import 'package:skyview_weather_app/ui/components/todays_weather.dart';
-import 'components/hourly_weather_listitems.dart';
 import '../Screens/city.dart';
+import '../provider/favourite_provider.dart';
+import '../screens/calendar.dart';
+import '../screens/chat.dart';
+import '../screens/settings.dart';
+import 'components/hourly_weather_listitems.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -100,6 +107,7 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<FavouriteProvider>(context);
     return Scaffold(
       bottomNavigationBar: GNav(
         backgroundColor:Colors.black,
@@ -125,14 +133,32 @@ class _HomePageState extends State<HomePage> {
           ),
           GButton(
             icon: Icons.calendar_today,
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => calendar()),
+              );
+            },
             text: 'Calendar',
           ),
           GButton(
             icon: Icons.chat,
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => chat()),
+              );
+            },
             text: 'Chat',
           ),
           GButton(
             icon: Icons.settings,
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => settings()),
+              );
+            },
             text: 'settings',)
         ],
       ),
@@ -177,6 +203,15 @@ class _HomePageState extends State<HomePage> {
 
             });
           }, icon: Icon(Icons.my_location, color: Colors.white,)),
+           IconButton(
+            onPressed: () {
+               provider.toggleFavourite(AutofillHints.location);
+            },
+
+           icon: provider.isExist(AutofillHints.location)
+             ? const Icon(Icons.favorite,color: Colors.red,)
+               :const Icon(Icons.favorite_border,color: Colors.white,)
+            ),
         ],
       ),
       body: Padding(
@@ -189,6 +224,7 @@ class _HomePageState extends State<HomePage> {
                 WeatherModel? weatherModel = snapshot.data;
 
                 return SingleChildScrollView(
+
 
                   child: Column(
                     children: [
@@ -213,6 +249,7 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: 115,
                         child: ListView.builder(
+
                           itemBuilder: (context,index){
                             Hour? hour = weatherModel?.forecast?.forecastday?[0].hour?[index];
                             return HourlyWeatherListItem(hour: hour,);
