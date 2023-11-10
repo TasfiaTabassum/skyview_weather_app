@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:skyview_weather_app/provider/favourite_provider.dart';
+import 'package:skyview_weather_app/screens/navigation.dart';
 import 'package:skyview_weather_app/ui/home.dart';
 
 void main() {
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const Navigation(),
     );
   }
 }

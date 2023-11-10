@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
+import 'package:skyview_weather_app/screens/settings.dart';
 import '../model/weather_model.dart';
 import '../provider/favourite_provider.dart';
 import '../service/api_service.dart';
@@ -8,10 +10,12 @@ import '../ui/components/hourly_weather_listitems.dart';
 import '../ui/components/todays_details.dart';
 import '../ui/components/todays_weather.dart';
 import 'package:skyview_weather_app/ui/home.dart';
+import 'calendar.dart';
+import 'chat.dart';
 
-class city extends StatelessWidget {
-  const city({super.key});
 
+class City extends StatelessWidget {
+  const City({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,10 @@ class city extends StatelessWidget {
     //final words = provider.words;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Favourite_city'),
+        title: Text(
+            'City',
+        style: TextStyle(color: Colors.white),),
+        backgroundColor: Colors.black,
       ),
     );
   }
