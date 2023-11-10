@@ -109,60 +109,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final provider = Provider.of<FavouriteProvider>(context);
     return Scaffold(
-      bottomNavigationBar: GNav(
-        backgroundColor:Colors.black,
-        color: Colors.white,
-        activeColor: Colors.white,
-        tabBackgroundColor: Colors.white24,
-        padding: EdgeInsets.all(16),
-        gap: 4,
-        tabs: [
-          GButton(
-            icon: Icons.home,
-            text: 'Home',
-          ),
-          GButton(
-            icon: Icons.location_city,
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => city()),
-              );
-            },
-            text: 'City',
-          ),
-          GButton(
-            icon: Icons.calendar_today,
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => calendar()),
-              );
-            },
-            text: 'Calendar',
-          ),
-          GButton(
-            icon: Icons.chat,
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => chat()),
-              );
-            },
-            text: 'Chat',
-          ),
-          GButton(
-            icon: Icons.settings,
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => settings()),
-              );
-            },
-            text: 'settings',)
-        ],
-      ),
-      //backgroundColor: const Color,
       backgroundColor: Colors.black,
       extendBodyBehindAppBar: true,
       appBar: AppBar(

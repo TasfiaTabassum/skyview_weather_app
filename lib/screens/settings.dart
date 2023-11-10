@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
-class settings extends StatelessWidget {
-  const settings({super.key});
+class Settings extends StatelessWidget {
+  const Settings({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
-        backgroundColor: Colors.purple[100],
+        title: Text('Settings',
+          style: TextStyle(color: Colors.white),),
+        backgroundColor: Colors.black,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
