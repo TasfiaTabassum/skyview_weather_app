@@ -18,7 +18,7 @@ class HourlyWeatherListItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFFFFFFFF).withAlpha(80),
+            color: Colors.black.withOpacity(.3),
             blurRadius: 3.0,
             spreadRadius: 0.0,
             offset: const Offset(2.0, 4.0,),
@@ -57,7 +57,7 @@ class HourlyWeatherListItem extends StatelessWidget {
             height: 40,
             decoration: BoxDecoration(
               shape: BoxShape.circle ,
-              color: Colors.white30,
+              color: Colors.white12,
 
             ),
             child:

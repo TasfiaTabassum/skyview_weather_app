@@ -3,7 +3,9 @@ class WeatherModel {
   Current? current;
   Forecast? forecast;
 
-  WeatherModel({this.location, this.current, this.forecast});
+  WeatherModel({this.location, this.current, this.forecast, });
+
+  bool isFav = false;
 
   WeatherModel.fromJson(Map<String, dynamic> json) {
     location = json['location'] != null

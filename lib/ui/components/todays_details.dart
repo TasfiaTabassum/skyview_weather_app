@@ -19,11 +19,11 @@ class TodaysDetails extends StatelessWidget {
           child: Container(
 
             decoration: BoxDecoration(
-              color: Colors.black87,
+              color: Colors.black,
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
-                  color: const Color(0xFFFFFFFF).withAlpha(80),
+                  color: Colors.black.withOpacity(.3),
                   blurRadius: 3.0,
                   spreadRadius: 0.0,
                   offset: const Offset(2.0, 4.0,),
@@ -60,7 +60,7 @@ class TodaysDetails extends StatelessWidget {
                                     "Temp.",
                                     style: TextStyle(
                                         fontSize: 12,
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontWeight: FontWeight.bold
                                     ),
                                   ),
@@ -114,18 +114,14 @@ class TodaysDetails extends StatelessWidget {
                               )
                             ],
                           )
-
                         ],
                       ),
-
                     ],
                   ),
                 ),
-
                 const SizedBox(
                   height: 30,
                 ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -164,7 +160,6 @@ class TodaysDetails extends StatelessWidget {
                             )
                           ],
                         )
-
                       ],
                     ),
 
@@ -203,18 +198,13 @@ class TodaysDetails extends StatelessWidget {
                             )
                           ],
                         )
-
                       ],
                     ),
-
                   ],
                 ),
-
                 const SizedBox(
                   height: 30,
                 ),
-
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -652,22 +642,13 @@ class TodaysDetails extends StatelessWidget {
                             )
                           ],
                         )
-
                       ],
                     ),
-
                   ],
                 ),
-
                 const SizedBox(
                   height: 30,
                 ),
-
-
-
-
-
-
               ],
             ),
           ),
@@ -676,4 +657,5 @@ class TodaysDetails extends StatelessWidget {
     );
   }
 }
+
 

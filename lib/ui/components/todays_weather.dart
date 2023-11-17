@@ -1,13 +1,28 @@
 // import 'package:flutter/cupertino.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_weather_bg_null_safety/bg/weather_bg.dart';
 import 'package:flutter_weather_bg_null_safety/flutter_weather_bg.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import 'package:skyview_weather_app/model/weather_model.dart';
 
-class TodaysWeather extends StatelessWidget {
+import '../../provider/favourite_provider.dart';
+
+class TodaysWeather extends StatefulWidget {
   final WeatherModel? weatherModel;
-  TodaysWeather({Key? key, this.weatherModel}) : super(key: key);
+  TodaysWeather({Key? key, this.weatherModel, required bool isFav}) : super(key: key);
+
+  @override
+  State<TodaysWeather> createState() => _TodaysWeatherState();
+}
+
+
+class _TodaysWeatherState extends State<TodaysWeather> {
+
+  bool isFav = false;
+
+  final fireStrore = FirebaseFirestore.instance.collection('CityName');
 
 
   WeatherType getWeatherType(Current? current){
@@ -96,37 +111,41 @@ class TodaysWeather extends StatelessWidget {
     return WeatherType.sunny;
 
   }
-  //
-  // Widget getWeatherIcon(int code) {
-  //   switch (code) {
-  //     case >= 200 && < 300:
-  //       return Image.asset('assets/1.png');
-  //     case >= 300 && < 400:
-  //       return Image.asset('assets/2.png');
-  //     case >= 500 && < 600:
-  //       return Image.asset('assets/3.png');
-  //     case >= 600 && < 700:
-  //       return Image.asset('assets/4.png');
-  //     case >= 700 && < 800:
-  //       return Image.asset('assets/5.png');
-  //     case == 800:
-  //       return Image.asset('assets/6.png');
-  //     case > 800 && <= 804:
-  //       return Image.asset('assets/7.png');
-  //     default:
-  //       return Image.asset('assets/7.png');
-  //   }
-  // }
 
+  //
   @override
   Widget build(BuildContext context) {
 
+    final provider = Provider.of<FavouriteProvider>(context);
+
     return Stack(
       children: [
-         WeatherBg(
-            weatherType: getWeatherType(weatherModel?.current),
-            width: MediaQuery.of(context).size.width,
-            height: 400),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.transparent, // Ensure transparent background
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(.3), // Darker color for the shadow
+                  blurRadius: 10.0,
+                  spreadRadius: 1.0,
+                  offset: const Offset(0, 0),
+                ),
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: WeatherBg(
+                weatherType: getWeatherType(widget.weatherModel?.current),
+                width: MediaQuery.of(context).size.width,
+                height: 400,
+              ),
+            ),
+          ),
+        ),
+
         SizedBox(
           width: double.infinity,
           height: 400,
@@ -137,6 +156,7 @@ class TodaysWeather extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
                   color: Colors.black38,
+                  borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
                       color: const Color(0xFF000000).withAlpha(20),
@@ -156,7 +176,7 @@ class TodaysWeather extends StatelessWidget {
                         Column(
                           children: [
                             Text(
-                              weatherModel?.location?.name ?? "",
+                              widget.weatherModel?.location?.name ?? "",
                               style: const TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
@@ -172,7 +192,7 @@ class TodaysWeather extends StatelessWidget {
                             ),
                             Text(
                               DateFormat.yMMMMEEEEd().format(DateTime.parse(
-                                  weatherModel?.current?.lastUpdated
+                                  widget.weatherModel?.current?.lastUpdated
                                           .toString() ??
                                       "")),
 
@@ -187,10 +207,51 @@ class TodaysWeather extends StatelessWidget {
                                       blurRadius: 1.0,
                                       offset: Offset(1.0, 1.0),
                                     )
-                                  ]),
+                                  ]
+                              ),
                             ),
                           ],
                         ),
+
+
+                        Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.white.withOpacity(0.26), // Adjust the opacity and color as needed
+                                spreadRadius: 0 ,
+                                blurRadius: 0 ,
+                                offset: Offset(0, 0), // Adjust the offset for the desired shadow direction
+                              ),
+                            ],
+                          ),
+
+                          child: IconButton(
+                              onPressed: () {
+                                provider.toggleFavourite(AutofillHints.location);
+                                setState(() {
+                                  isFav = !isFav;
+                                });
+
+                                //String id = DateTime.now().millisecondsSinceEpoch.toString();
+                                fireStrore.doc(widget.weatherModel?.location?.name ?? "").set({
+                                  'title': widget.weatherModel?.location?.name ?? "",
+                                  //'id' : id,
+                                }).then((value){
+
+                                }).onError((error, stackTrace){
+                                  Utils().toastMessage(error.toString());
+                                });
+                              },
+                              icon: isFav == true
+                                  ? const Icon(Icons.favorite,color: Colors.black,)
+                                  :const Icon(Icons.favorite_border,color: Colors.white,)
+                          ),
+                        ),
+
+
+
                       ],
                     ),
                     // Row(
@@ -256,7 +317,7 @@ class TodaysWeather extends StatelessWidget {
                         ],
                       ),
                       child: Image.network(
-                          "https:${weatherModel?.current?.condition?.icon ?? ""}"),
+                          "https:${widget.weatherModel?.current?.condition?.icon ?? ""}"),
                     ),
                   ),
                   const Spacer(),
@@ -269,7 +330,7 @@ class TodaysWeather extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 2.0),
                             child: Text(
-                              weatherModel?.current?.tempC
+                              widget.weatherModel?.current?.tempC
                                       ?.round()
                                       .toString() ??
                                   "",
@@ -304,7 +365,7 @@ class TodaysWeather extends StatelessWidget {
                         ],
                       ),
                       Text(
-                        weatherModel?.current?.condition?.text.toString() ?? "",
+                        widget.weatherModel?.current?.condition?.text.toString() ?? "",
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 15,
@@ -373,7 +434,7 @@ class TodaysWeather extends StatelessWidget {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      weatherModel?.current?.feelslikeC
+                                      widget.weatherModel?.current?.feelslikeC
                                           ?.round()
                                           .toString() ??
                                           "",
@@ -411,7 +472,7 @@ class TodaysWeather extends StatelessWidget {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      "${weatherModel?.current?.windKph?.round().toString()} km/h",
+                                      "${widget.weatherModel?.current?.windKph?.round().toString()} km/h",
                                       style: TextStyle(
                                           fontSize: 12,
                                           color: Colors.white,
@@ -455,7 +516,7 @@ class TodaysWeather extends StatelessWidget {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      "${weatherModel?.current?.humidity.toString()} %",
+                                      "${widget.weatherModel?.current?.humidity.toString()} %",
                                       style: TextStyle(
                                           fontSize: 12,
                                           color: Colors.white,
@@ -490,7 +551,7 @@ class TodaysWeather extends StatelessWidget {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      "${weatherModel?.current?.visKm?.round().toString()} km",
+                                      "${widget.weatherModel?.current?.visKm?.round().toString()} km",
                                       style: TextStyle(
                                           fontSize: 12,
                                           color: Colors.white,
@@ -513,5 +574,11 @@ class TodaysWeather extends StatelessWidget {
         )
       ],
     );
+  }
+}
+
+class Utils {
+  void toastMessage(String message) {
+
   }
 }

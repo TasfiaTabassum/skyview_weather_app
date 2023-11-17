@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "317804681516",
+    "project_id": "weatherly-9bdf3",
+    "storage_bucket": "weatherly-9bdf3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317804681516:android:31e915f7a5ecaa51053489",
+        "android_client_info": {
+          "package_name": "com.example.skyview_weather_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCsG6D8UHBIZ0bzNqj6kmcDHUSHZJ8TaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

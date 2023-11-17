@@ -1,11 +1,18 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:skyview_weather_app/Screens/calendar.dart';
-import 'package:skyview_weather_app/Screens/chat.dart';
-import 'package:skyview_weather_app/Screens/city.dart';
-import 'package:skyview_weather_app/screens/settings.dart';
+import 'package:skyview_weather_app/screens/faq.dart';
+// import 'package:skyview_weather_app/Screens/calendar.dart';
+// import 'package:skyview_weather_app/Screens/chat.dart';
+// import 'package:skyview_weather_app/Screens/city.dart';
+// import 'package:skyview_weather_app/screens/settings.dart';
+
 import 'package:skyview_weather_app/ui/home.dart';
+import 'faq.dart';
+import 'calendar.dart';
+import 'chat.dart';
+import 'city.dart';
+// import 'settings.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({super.key});
@@ -23,13 +30,14 @@ class _NavigationState extends State<Navigation> {
     City(),
     Calendar(),
     Chat(),
-    Settings(),
+    FAQ(),
+    //QuestionAnswers(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple,
+      backgroundColor: Colors.deepPurple,
       extendBodyBehindAppBar: true,
       extendBody: true,
       body: PageTransitionSwitcher(
@@ -52,8 +60,8 @@ class _NavigationState extends State<Navigation> {
           color: Colors.black,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.8),
-              blurRadius: 20,
+              color: Colors.black87.withOpacity(0.8),
+              blurRadius: 5,
               offset: Offset(0, -2),
             ),
           ],
@@ -73,9 +81,9 @@ class _NavigationState extends State<Navigation> {
             backgroundColor: Colors.transparent,
             tabBackgroundColor: Colors.black,
             color: Colors.white,
-            activeColor: Colors.blue,
+            activeColor: Colors.deepPurple,
             gap: 8,
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
             tabs: [
               GButton(
                 icon: Icons.home,
@@ -86,16 +94,17 @@ class _NavigationState extends State<Navigation> {
                 text: 'City',
               ),
               GButton(
-                icon: Icons.calendar_today,
+                icon: Icons.calendar_month,
                 text: 'Calendar',
               ),
+
               GButton(
                 icon: Icons.chat,
                 text: 'My chat',
               ),
               GButton(
-                icon: Icons.settings,
-                text: 'Settings',
+                icon: Icons.question_answer,
+                text: 'FAQ',
               ),
             ],
           ),
