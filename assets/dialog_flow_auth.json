@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "skyviewweatherchatbot-gyr9",
+  "private_key_id": "6ab6eea00bcd3e559b1dd61f6eecd9b71e33af64",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDbxz70ffR8ilpI\nKJm/a9HVdt2334+DYXQsZSj034KT3pnUxqm4uJI0BIP9M78gU3+ubVHhx78yDNG1\nE+QEQSqIbnY97RCvykwu2oxqDT5heujhGc+Xf4ds7RgM0Cre0cxDSEtY2anxA0n1\nAc3kzYmjdnXlSjFhCOPZMGGyJ51GULQ+E0ZfxEqg8NFcrImHSyjQAPd8c8lP6gur\nP9a8yJ22Ry0zU+TerMgsBp/0VPerTLApwacyf7JCwzvQxSBKGK2K+qp9t2gBk8HS\ncaLPFqmX7FAycUMW+ESV+4CxP1vBLUr4fW/UoCSUJUUnDrabiY8J1uI1cm7Xep48\nFOC02gY3AgMBAAECggEAEKhKz2QRLjPxliDW+lOqh+fQ89k9ZYNIN1SEJKnLb01X\n/RurjG/CIQWAmCXJDs2qp+aVkKu/hC8a4S28l/f1Hc8QJi8RbIluzxRLFSn4zZGa\nafPiBdpUF3+RgD3Hf14zrEZ5SNGCgwexSMvAtl6VAoR9eLSasSnn1F50NnkF1L4w\nLmezEGqhwS66ODXd87677xe9mwwiaesYLj0EFrr5TafZiHoeij3MAtAyKCLYt/Lk\njwQbn9YZLZ41iHH5v/zwyki+HTrgsOkN79JPqWtGo4cywap5XsDhnaKod5ShFLua\nWFyy9cdF22Jp4yJTD3Bfj1F6YAiOzpJQyfTC7JYuxQKBgQD1WRCEGZvMzgwv1Obk\nh3+/8GJtRTGBlS3oMhVvDLiA1ulQmF9JFDlQuCFQTpZrYEnrfOJNXf+M/tg5kwoK\nz8WAz7fJXRctVs/jqQWv2+XcTM6hM2A8awRrvWYpK2UJmsyxct+/kJ5+fNKBQZrj\nCizYNSC107UW5bxpjMjdJoqyNQKBgQDlUfyB0+4oiYmi5jqceO9FbIrKW5b362DQ\n4gt5RE9dqrZVvPaIItbapC9oYs3nxpO6cxkO4P7phWdEy4nR/XjIkESV3ZVZnBBi\nbtktUGAV4NOKGhHBG90mr3VxYgLu9nRM8AgvSIVvJtBXf/rC33sNns8d2Oz7W4CM\nGNy7PPWkOwKBgQC5oBkO2RE3cu1lgv7uCFZvMcBGTAOYtvV0p+/vhQBS+kar45yz\n/ckfeTA7QjosIz3KHUJaprOiSW3uoYEHjQsw2feDMhtHAldnN4pF82mFs9bhv60g\nCRffK/0PSPW4vpX/65m9pf1EVcwuXySAgkJLkmadKv/nwwk6EnomV/K3wQKBgQDE\nnwdiSdRp7YOVqNGYWBjP7cESwHUxHSBl+WrdDzT9muG7ocm/8B9IWH5NgmoJ0LnZ\no9ZYa5Ilp7xjwCDra+mkDg7AcL0dmDJ0M5cCw2efWqYGQ1P1v25fPRH1pZPeUHJn\nhWd/Iy9FnoIEhDb936AijYgIj3aiDlKpzKd14067AQKBgQDxGZJVryMykCwKm96w\nwcfOsSq9rTVopSsgZCQ1QjuzNglGJj7FJqqKEnQHpLjK9/mLHasA5nNFn9PaQKUi\nSTtQjjvw8jlquVNn6h6f1CJQJq51yxjKBTswgZJjK4uy6tlsxdcDzGza168eFMt3\n7VaMANlsNTHC+RZl7YOpBCZerQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "skybuddychatbot@skyviewweatherchatbot-gyr9.iam.gserviceaccount.com",
+  "client_id": "110845986433256865791",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/skybuddychatbot%40skyviewweatherchatbot-gyr9.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

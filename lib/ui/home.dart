@@ -169,27 +169,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-
-
-           // IconButton(
-           //  onPressed: () {
-           //     provider.toggleFavourite(AutofillHints.location);
-           //  },
-           //
-           // icon: provider.isExist(AutofillHints.location)
-           //   ? const Icon(Icons.favorite,color: Colors.black,)
-           //     :const Icon(Icons.favorite_border,color: Colors.black,)
-           //  ),
-
-          // IconButton(onPressed: (){
-          //   notificationsServices.scheduleNotification(
-          //       "Scheduled notification",
-          //       "body"
-          //   );
-          // },
-          //     icon: Icon(Icons.notification_add, color: Colors.black,)),
-
-
         ],
       ),
       body: Padding(
