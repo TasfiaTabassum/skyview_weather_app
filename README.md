@@ -63,4 +63,3 @@ String _getWeatherGif() {
 npm install -g firebase-tools
 
 
-3.
