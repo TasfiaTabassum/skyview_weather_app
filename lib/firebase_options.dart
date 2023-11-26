@@ -43,39 +43,41 @@ class DefaultFirebaseOptions {
     }
   }
 
+// paste api key , api id, and other info acccordingly
+
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBWzrHuXm0Zm5Ilo10_luwW1_GnmX86-Pw',
-    appId: '1:317804681516:web:7cb337e6e37c2a2f053489',
+    apiKey: 'apiKey-Pw',
+    appId: 'appId',
     messagingSenderId: '317804681516',
-    projectId: 'weatherly-9bdf3',
-    authDomain: 'weatherly-9bdf3.firebaseapp.com',
-    storageBucket: 'weatherly-9bdf3.appspot.com',
-    measurementId: 'G-TKLGDBR66Y',
+    projectId: 'projectId',
+    authDomain: 'authDomain',
+    storageBucket: 'storageBucket',
+    measurementId: 'measurementId',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCCsG6D8UHBIZ0bzNqj6kmcDHUSHZJ8TaU',
-    appId: '1:317804681516:android:31e915f7a5ecaa51053489',
-    messagingSenderId: '317804681516',
-    projectId: 'weatherly-9bdf3',
-    storageBucket: 'weatherly-9bdf3.appspot.com',
+    apiKey: 'paste',
+    appId: 'paste',
+    messagingSenderId: 'paste',
+    projectId: 'paste',
+    storageBucket: 'paste',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA2ZF2cP5_g8piuoTFiDZ6QnXZ9hgYHq9Y',
-    appId: '1:317804681516:ios:b2ff2e9b6e400c39053489',
-    messagingSenderId: '317804681516',
-    projectId: 'weatherly-9bdf3',
-    storageBucket: 'weatherly-9bdf3.appspot.com',
-    iosBundleId: 'com.example.skyviewWeatherApp',
+    apiKey: 'paste',
+    appId: 'paste',
+    messagingSenderId: 'paste',
+    projectId: 'paste',
+    storageBucket: 'paste',
+    iosBundleId: 'paste',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyA2ZF2cP5_g8piuoTFiDZ6QnXZ9hgYHq9Y',
-    appId: '1:317804681516:ios:c8f12c1289f269ac053489',
-    messagingSenderId: '317804681516',
-    projectId: 'weatherly-9bdf3',
-    storageBucket: 'weatherly-9bdf3.appspot.com',
-    iosBundleId: 'com.example.skyviewWeatherApp.RunnerTests',
+    apiKey: 'paste',
+    appId: 'paste',
+    messagingSenderId: 'paste',
+    projectId: 'paste',
+    storageBucket: 'paste',
+    iosBundleId: 'paste',
   );
 }
