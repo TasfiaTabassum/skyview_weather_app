@@ -12,9 +12,6 @@ class Chat extends StatefulWidget {
   //static const routeName = '/chat';
 
 
-  // final fireStrore = FirebaseFirestore.instance.collection('CityName').snapshots();
-  // final ApiService apiService = ApiService(); // Create an instance of ApiService
-
 
   // const Chat({super.key});
   Chat({super.key});
@@ -199,42 +196,3 @@ class _ChatState extends State<Chat> {
   }
 
 
-
-
-  //
-  // sendMessage(String text) async {
-  //   if (text.isEmpty) {
-  //     print('Message is empty');
-  //   } else {
-  //     // Add the user's message to Cloud Firestore
-  //     await _messagesCollection.add({
-  //       'text': text,
-  //       'timestamp': FieldValue.serverTimestamp(),
-  //       'isUserMessage': true,
-  //     });
-  //
-  //     setState(() {
-  //       addMessage(Message(text: DialogText(text: [text])), true);
-  //     });
-  //
-  //     DetectIntentResponse response = await dialogFlowtter.detectIntent(
-  //         queryInput: QueryInput(text: TextInput(text: text)));
-  //
-  //     // Add the non-user's message to Cloud Firestore
-  //     if (response.message != null) {
-  //       await _messagesCollection.add({
-  //         'text': response.message!.text.text[0],
-  //         'timestamp': FieldValue.serverTimestamp(),
-  //         'isUserMessage': false,
-  //       });
-  //
-  //       setState(() {
-  //         addMessage(response.message!, false);
-  //       });
-  //     }
-  //   }
-  //
-  //   addMessage(Message message, [bool isUserMessage = false]) {
-  //     messages.add({'message': message, 'isUserMessage': isUserMessage});
-  //   }
-  // }
