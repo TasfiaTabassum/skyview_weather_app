@@ -17,62 +17,6 @@ import 'calendar.dart';
 import 'chat.dart';
 
 
-// class City extends StatefulWidget {
-//   const City({super.key});
-//
-//   @override
-//   State<City> createState() => _CityState();
-// }
-//
-// class _CityState extends State<City> {
-//   final fireStrore = FirebaseFirestore.instance.collection('CityName').snapshots();
-//   final fireStrore1 = FirebaseFirestore.instance.collection('CalendarEvent').snapshots();
-//   @override
-//   Widget build(BuildContext context) {
-//     ApiService apiService = ApiService();
-//     String searchText = "auto:ip" ;
-//     //final provider = Provider.of<FavouriteProvider>(context);
-//     //final words = provider.words;
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(
-//           'City',
-//           style: TextStyle(color: Colors.black,
-//             fontWeight: FontWeight.bold,
-//           ),
-//
-//         ),
-//         backgroundColor: Colors.white,
-//       ),
-//       body: Column(
-//         children:[
-//           StreamBuilder<QuerySnapshot>(stream: fireStrore,
-//               builder: (BuildContext context,AsyncSnapshot<QuerySnapshot> snapshot){
-//
-//                 if(snapshot.connectionState == ConnectionState.waiting)
-//                   return CircularProgressIndicator();
-//                 if(snapshot.hasError)
-//                   return Text('Some Error');
-//
-//                 return Expanded(
-//                   child: ListView.builder(
-//                     itemCount: snapshot.data?.docs.length,
-//                     itemBuilder: (context,index){
-//                       return ListTile(
-//                         title: Text(snapshot.data!.docs[index]['title'].toString()),
-//                       );
-//                     },
-//                   ),
-//                 );
-//               }
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
-
 
 class City extends StatefulWidget {
   const City({Key? key}) : super(key: key);
