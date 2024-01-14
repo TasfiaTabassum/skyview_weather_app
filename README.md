@@ -13,16 +13,23 @@ Our very first flutter project! hehe ( n U n )
     - SkyBuddy, a weather cahtbot to make user experience more interesting.
     - FAQ section 
 
+
+
+
+
+https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/bdf883a2-d4aa-43d7-9385-ef4680653734
+
+
+
 # Screenshots :
 
 ### Home Screen 
 
-![1](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/8e97f2af-149a-416e-aff6-b09c39246ad9)
+<img src="https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/8e97f2af-149a-416e-aff6-b09c39246ad9" width="280" />
 
-![2](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/f1cf4dcf-e781-45d4-bb0d-2eaaf4632df7)
+<img src="https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/f1cf4dcf-e781-45d4-bb0d-2eaaf4632df7" width="280" />
 
-![3](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/8c2e2d55-095b-4c98-99ad-95275bca089c)
-
+<img src="https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/8c2e2d55-095b-4c98-99ad-95275bca089c" width="280" />
 
 ### Add favourite city
 
@@ -31,28 +38,28 @@ https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/8a2dd6d4-b
 
 ### Search up Locations
 
-![4](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/74dbb831-af69-40da-b517-f72e04133d64)
+<img src="https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/74dbb831-af69-40da-b517-f72e04133d64" width="280" />
 
-![5](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/74c36433-98d2-4ed2-9309-dbf934c90ce3)
+<img src="https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/74c36433-98d2-4ed2-9309-dbf934c90ce3" width="280" />
 
 
 ### Event Calender
 
-![6](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/541302ee-a735-498d-8c0e-5461df12892f)
+<img src="https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/541302ee-a735-498d-8c0e-5461df12892f" width="280" />
 
-![7](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/ad35d78c-c9fa-4e65-85ab-dc02b6e05bac)
+<img src="https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/ad35d78c-c9fa-4e65-85ab-dc02b6e05bac" width="280" />
 
 
 ### User Friendly Chatbot
 
-![8](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/d74346d6-ab67-4d7a-9269-ef742eac5028)
+<img src="https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/d74346d6-ab67-4d7a-9269-ef742eac5028" width="280" />
 
 
 ### FAQ Section
 
-![9](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/488ff714-357c-4c09-8619-6ba468f3d9b2)
+<img src="https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/488ff714-357c-4c09-8619-6ba468f3d9b2" width="280" />
 
-![10](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/a276e30d-8d1f-44e2-b3d5-7a64800823b7)
+<img src="https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/a276e30d-8d1f-44e2-b3d5-7a64800823b7" width="280" />
 
 
 
