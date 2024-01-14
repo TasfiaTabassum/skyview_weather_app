@@ -15,7 +15,7 @@ Our very first flutter project! hehe ( n U n )
 
 # Screenshots :
 
-Home Screen 
+### Home Screen 
 
 ![1](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/8e97f2af-149a-416e-aff6-b09c39246ad9)
 
@@ -24,31 +24,31 @@ Home Screen
 ![3](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/8c2e2d55-095b-4c98-99ad-95275bca089c)
 
 
-Add favourite city
+### Add favourite city
 
 https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/8a2dd6d4-b132-454f-9b22-dcbe3a9ff8fc
 
 
-Search up Locations
+### Search up Locations
 
 ![4](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/74dbb831-af69-40da-b517-f72e04133d64)
 
 ![5](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/74c36433-98d2-4ed2-9309-dbf934c90ce3)
 
 
-Event Calender
+### Event Calender
 
 ![6](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/541302ee-a735-498d-8c0e-5461df12892f)
 
 ![7](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/ad35d78c-c9fa-4e65-85ab-dc02b6e05bac)
 
 
-User Friendly Chatbot
+### User Friendly Chatbot
 
 ![8](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/d74346d6-ab67-4d7a-9269-ef742eac5028)
 
 
-FAQ Section
+### FAQ Section
 
 ![9](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/488ff714-357c-4c09-8619-6ba468f3d9b2)
 
@@ -59,7 +59,7 @@ FAQ Section
 
 
 
-Steps:
+## Steps:
 
 
 1. To get access to weather gifs, please go to your 'weather_bg.dart' file ( '.../.pub-cache/hosted/pub.dev/flutter_weather_bg_null_safety-1.0.0/lib/bg/weather_bg.dart' ) and add the below code in 'WeatherItemBg' class :
