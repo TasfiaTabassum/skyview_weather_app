@@ -1,19 +1,63 @@
 # skyview_weather_app
 
-A new Flutter project.
+Our very first flutter project! hehe ( n U n )
 
-## Getting Started
+# Features :
+    - View Current Temperature, weather and weather details.
+    - View 3days weather Forecast.
+    - View hourly weather forecast of the day.
+    - Search up City/location/Country to view weather details and forecast of the location.
+    - Add City/location as favourite for quick-view.
+    - View event calender.
+    - Add events to specific date in event calender.
+    - SkyBuddy, a weather cahtbot to make user experience more interesting.
+    - FAQ section 
 
-This project is a starting point for a Flutter application.
+# Screenshots :
 
-A few resources to get you started if this is your first Flutter project:
+Home Screen 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![1](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/8e97f2af-149a-416e-aff6-b09c39246ad9)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![2](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/f1cf4dcf-e781-45d4-bb0d-2eaaf4632df7)
+
+![3](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/8c2e2d55-095b-4c98-99ad-95275bca089c)
+
+
+Add favourite city
+
+https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/8a2dd6d4-b132-454f-9b22-dcbe3a9ff8fc
+
+
+Search up Locations
+
+![4](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/74dbb831-af69-40da-b517-f72e04133d64)
+
+![5](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/74c36433-98d2-4ed2-9309-dbf934c90ce3)
+
+
+Event Calender
+
+![6](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/541302ee-a735-498d-8c0e-5461df12892f)
+
+![7](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/ad35d78c-c9fa-4e65-85ab-dc02b6e05bac)
+
+
+User Friendly Chatbot
+
+![8](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/d74346d6-ab67-4d7a-9269-ef742eac5028)
+
+
+FAQ Section
+
+![9](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/488ff714-357c-4c09-8619-6ba468f3d9b2)
+
+![10](https://github.com/TasfiaTabassum/skyview_weather_app/assets/58984231/a276e30d-8d1f-44e2-b3d5-7a64800823b7)
+
+
+
+
+
 
 Steps:
 
