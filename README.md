@@ -10,7 +10,7 @@ Our very first flutter project! hehe ( n U n )
     - Add City/location as favourite for quick-view.
     - View event calender.
     - Add events to specific date in event calender.
-    - SkyBuddy, a weather cahtbot to make user experience more interesting.
+    - SkyBuddy, a weather chatbot to make user experience more interesting.
     - FAQ section 
 
 
